@@ -49,6 +49,17 @@ const routes = [
     },
   },
   {
+    method: "GET",
+    path: "/user",
+    handler: (request, h) => {
+      return h
+        .response("This is user page")
+        .code(200)
+        .type("text/plain")
+        .header("X-custom", "some-value");
+    },
+  },
+  {
     method: "*",
     path: "/{any*}",
     handler: (request, h) => {
